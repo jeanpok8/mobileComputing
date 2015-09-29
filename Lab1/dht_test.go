@@ -33,19 +33,19 @@ func makeDHTNode(nodeId *string, ip string, port string) *DHTNode {
 	//dhtNode.contact.port = port
 	
     if nodeId == nil {
-		genNodeId := generateNodeId()
-		dhtNode.nodeId = genNodeId
-		dhtNode.contact.ip = ip 
-	    dhtNode.contact.port = port
-	    dhtNode.successor=dhtNode
-	    dhtNode.predecessor=dhtNode
+                genNodeId := generateNodeId()
+	        dhtNode.id = genNodeId
+	        dhtNode.contact.ip = ip 
+	        dhtNode.contact.port = port
+	        dhtNode.successor=dhtNode
+	        dhtNode.predecessor=dhtNode
 		dhtNode.finger=make([]*Fingers,160)
 		//dhtNode.finger=make([]*fingers,160)
 		} else {
 			
-		//dhtNode.nodeId = *nodeId node7b :=makeDHTNode(&id7,"localhost","1118")
+		dhtNode.id = *nodeId 
 		dhtNode.contact.ip = ip 
-	    dhtNode.contact.port = port
+	         dhtNode.contact.port = port
 		dhtNode.successor=dhtNode
 		dhtNode.predecessor=dhtNode
 		dhtNode.finger=make([]*Fingers,160)
